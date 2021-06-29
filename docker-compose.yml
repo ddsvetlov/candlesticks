@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  test-kindlestick:
+    container_name: test-kindlestick
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: python test_kindlestick.py
+
+  kindlestick:
+    container_name: kindlestick
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: python kindlestick.py
